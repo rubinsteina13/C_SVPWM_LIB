@@ -5,7 +5,7 @@
   * @version V1.0
   * @date    May-2020
   * @brief   This file provides firmware function for implementation the SVPWM - 
-  *			 		 Space-Vector Pulse Width Modulation for power electronics application
+  *	     Space-Vector Pulse Width Modulation for power electronics application
   ***********************************************************************************
   * @license
   *
@@ -37,14 +37,14 @@
 
 /* Private typedef ----------------------------------------------------------------*/
 /* Private define -----------------------------------------------------------------*/
-#define M_Pi	3.1415926535897f	// float type of Pi constant value
+#define M_Pi	3.1415926535897f // float type of Pi constant value
 #define M_Pi_3	(M_Pi/3.0f)
 
 /* Private constants --------------------------------------------------------------*/
 
 /** 
-  * @brief	Matrix with cell indices in a time intervals table for SVPWM duty cycle
-  *					calculation technique
+  * @brief Matrix with cell indices in a time intervals table for SVPWM duty cycle
+  *	   calculation technique
   */ 
 const uint8_t au8PermuataionMatrix[6][3] =
 {	
@@ -63,8 +63,8 @@ const uint8_t au8PermuataionMatrix[6][3] =
 
 /**
   * @brief  SVPWM calculation function. This function calculates three values of
-  *					duty cycle to generate a three-phase voltage vector with amplitude -
-  *					ptSVPWM->fUs and angle - ptSVPWM->fAngRad.
+  *	    duty cycle to generate a three-phase voltage vector with amplitude -
+  *	    ptSVPWM->fUs and angle - ptSVPWM->fAngRad.
   * @param  ptSVPWM: pointer to user data structure with type "tSVPWM".               
   * @retval None
   */
