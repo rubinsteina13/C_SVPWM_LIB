@@ -5,8 +5,8 @@
   * @version V1.0
   * @date    May-2020
   * @brief   This file contains the type definition of data structure and function
-  *			 		 prototypes for implementation the SVPWM - Space-Vector Pulse Width 
-  *					 Modulation
+  *	     prototypes for implementation the SVPWM - Space-Vector Pulse Width 
+  *	     Modulation
   ***********************************************************************************
   * @license
   *
@@ -38,7 +38,7 @@
 #define __SVPWM_H__
 
 #ifdef __cplusplus
-	extern "C" {
+extern "C" {
 #endif
 
 /* Includes -----------------------------------------------------------------------*/
@@ -48,56 +48,56 @@
 /* Exported types -----------------------------------------------------------------*/
 
 /** 
-  * @brief	SVPWM module data input type
+  * @brief SVPWM module data input type
   */
 typedef enum
 {
-	AlBe	= 0x00U,										// Alpha-Beta component input
-	UsAng	= 0x01U											// Magnitude-Angle component input
+	AlBe	= 0x00U,		// Alpha-Beta component input
+	UsAng	= 0x01U			// Magnitude-Angle component input
 } tInType;
 
 /** 
-  * @brief	"SVPWM Module" data structure
+  * @brief "SVPWM Module" data structure
   */
 typedef struct sSVPWM
 {
 // Inputs:
-	tInType	enInType;									// SVPWM module data input type
-	float	fUdc;												// DC Link voltage, Volts
-	float	fUdcCCRval;									// Counter compare register value which is
+	tInType	enInType;		// SVPWM module data input type
+	float	fUdc;			// DC Link voltage, Volts
+	float	fUdcCCRval;		// Counter compare register value which is
 																		// equivalent to full DC Link voltage
 	// enInType == AlBe:
-	float	fUal;												// Alpha input, Volts
-	float	fUbe;												// Beta input, Volts
+	float	fUal;			// Alpha input, Volts
+	float	fUbe;			// Beta input, Volts
 	// enInType == UsAng:
-	float	fUs;												// Magnitude input, Volts (enInType == UsAng)
-	float	fAngRad;										// Angle input, Rad (enInType == UsAng)
+	float	fUs;			// Magnitude input, Volts (enInType == UsAng)
+	float	fAngRad;		// Angle input, Rad (enInType == UsAng)
 // Outputs:
-	float	fCCRA;											// Counter compare register A value
-	float	fCCRB;											// Counter compare register B value
-	float	fCCRC;											// Counter compare register C value
+	float	fCCRA;			// Counter compare register A value
+	float	fCCRB;			// Counter compare register B value
+	float	fCCRC;			// Counter compare register C value
 // Functions:
-	void	(*m_calc)(struct sSVPWM*);	// Pointer to SVPWM calculation function
+	void (*m_calc)(struct sSVPWM*);	// Pointer to SVPWM calculation function
 } tSVPWM;
 
 /* Exported constants -------------------------------------------------------------*/
 
 /** 
-  * @brief	Initialization constant with defaults for user variables
-  *			with "tSVPWM" type
+  * @brief Initialization constant with defaults for user variables
+  *	   with "tSVPWM" type
   */
-#define SVPWM_DEFAULTS {						\
-	.enInType		= AlBe,								\
-	.fUal				= 0.0f,								\
-	.fUbe				= 0.0f,								\
-	.fUs				= 0.0f,								\
-	.fAngRad		= 0.0f,								\
-	.fUdc				= 0.0f,								\
-	.fUdcCCRval	= 0.0f,								\
-	.fCCRA			= 0.0f,								\
-	.fCCRB			= 0.0f,								\
-	.fCCRC			= 0.0f,								\
-	.m_calc			= tSVPWM_calc					\
+#define SVPWM_DEFAULTS {		\
+	.enInType	= AlBe,		\
+	.fUal		= 0.0f,		\
+	.fUbe		= 0.0f,		\
+	.fUs		= 0.0f,		\
+	.fAngRad	= 0.0f,		\
+	.fUdc		= 0.0f,		\
+	.fUdcCCRval	= 0.0f,		\
+	.fCCRA		= 0.0f,		\
+	.fCCRB		= 0.0f,		\
+	.fCCRC		= 0.0f,		\
+	.m_calc		= tSVPWM_calc	\
 }
 
 /* Exported macro -----------------------------------------------------------------*/
