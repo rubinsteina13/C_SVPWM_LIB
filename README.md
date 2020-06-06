@@ -11,6 +11,8 @@ This embedded C-library for MCUs provides the 3-phase duty cycle generation by S
 # HowToUse (example)
 
     // let it the MCU's hardware counter compare registers is: CCR0, CCR1, CCR2
+    
+    #include "svpwm.h"
 
     // updatable voltages in Alpha-Beta coordinates:
     float NewAlphaVoltage, NewBetaVoltage;
