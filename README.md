@@ -26,7 +26,7 @@ This embedded C-library for MCUs provides the 3-phase duty cycle generation by S
     // Next code must be executed every time a new calculation of duty cycles is needed
     sSVPWM.fUal = NewAlphaVoltage;	// set a new value of voltage Alpha
     sSVPWM.fUbe = NewBetaVoltage;	// set a new value of voltage Beta
-    sSVPWM.m_calc(&sSVPWM); 		// call the SVPWM duty cycles calculation function
+    sSVPWM.m_calc(&sSVPWM);		// call the SVPWM duty cycles calculation function
     CCR0 = sSVPWM.fCCRA;		// update the duty cycle value in CCR0
     CCR1 = sSVPWM.fCCRB;		// update the duty cycle value in CCR1
     CCR2 = sSVPWM.fCCRC;		// update the duty cycle value in CCR2
